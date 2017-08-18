@@ -1,0 +1,63 @@
+object FormSimpleWatching: TFormSimpleWatching
+  Left = 0
+  Height = 475
+  Top = 0
+  Width = 506
+  Caption = 'Simple Watching'
+  ClientHeight = 475
+  ClientWidth = 506
+  Visible = False
+  object Memo1: TMemo
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Panel1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 433
+    Top = 42
+    Width = 506
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Lines.Strings = (
+      'Info'
+    )
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 0
+    Height = 42
+    Top = 0
+    Width = 506
+    Anchors = [akTop, akLeft, akRight]
+    ClientHeight = 42
+    ClientWidth = 506
+    TabOrder = 1
+    object BuClear: TButton
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Panel1
+      Left = 5
+      Height = 25
+      Top = 5
+      Width = 75
+      BorderSpacing.Around = 4
+      Caption = 'Clear Info'
+      OnClick = BuClearClick
+      TabOrder = 0
+    end
+  end
+  object SHChangeNotify1: TSHChangeNotify
+    OnCreate = SHChangeNotify1Create
+    OnDelete = SHChangeNotify1Delete
+    OnMkDir = SHChangeNotify1MkDir
+    OnRenameItem = SHChangeNotify1RenameItem
+    OnRmDir = SHChangeNotify1RmDir
+    Left = 320
+    Top = 72
+  end
+end
